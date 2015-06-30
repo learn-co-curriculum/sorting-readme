@@ -90,7 +90,7 @@ It should return : `["apple pie", "steak", "vegetable soup"]`.
 
 Simply calling `.sort` has the desired effect. It implicity executes the code we used in the block in the above example. But now we understand *how* sort works, not just *what* it does. 
 
-**Bonus:** Think about customizing a sorting method. Since `.sort` takes a block, can we tell `.sort` to sort in revers alphabetical order? In other words, can we sort a collection of data from greatest to least? 
+**Bonus:** Think about customizing a sorting method. Since `.sort` takes a block, can we tell `.sort` to sort in reverse alphabetical order? In other words, can we sort a collection of data from greatest to least? 
 
 ## Resources
 
