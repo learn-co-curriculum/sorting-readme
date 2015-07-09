@@ -32,7 +32,13 @@ Let's take a look at a basic example using an array of numbers:
 array = [7, 3, 1, 2, 6, 5]
 
 array.sort do |a, b|
-	a <=> b
+	if a == b
+    0
+  elsif a > b
+    1
+  elsif a < b
+    -1
+  end
 end
 ```
 
@@ -46,7 +52,7 @@ end
 
 `.each` starts at the beginning of the array and passes each item, *one at a time*, to the code in the block (code in between `do`, `end`). We see `.each` passing each element of the array to the block here: `|num|`, by placing a placeholder for each element in between these pipes. 
 
-`.sort` is different. It passes elements *two at a time* into the block, and compares those two elements inside the block, via this line `a <=> b`. If `a` is greater than `b`, it will move `b` to the spot in the array *after* `b`. 
+`.sort` is different. It passes elements *two at a time* into the block, and compares those two elements inside the block with our `if/elsif` logic. If `a` and `b` are equal, the block will return 0, and `.sort` will leave them in their current places. If `a` is less than `b` and belongs before it, the block will return `-1` and `.sort` will once again leave them in their current places (because `a` is already before `b`.) If `a` is greater than `b` and belongs after it, the block will return `1` and `.sort` will switch the locations of `a` and `b`.  
 
 Therefore, when we call: 
 
@@ -54,7 +60,13 @@ Therefore, when we call:
 array = [7, 3, 1, 2, 6, 5]
 
 array.sort do |a, b|
-	a <=> b
+	if a == b
+    0
+  elsif a > b
+    1
+  elsif a < b
+    -1
+  end
 end
 ```
 
@@ -64,9 +76,23 @@ The first time through the collection, `.sort` passes `7` and `3` into the block
 
 On the second pass through the array, `.sort` yields the next two items to the block, in this case `7` and `1`. It compares them in the same way, makes any necessary changes to the location of the items in the array, and then moves on to the next pair. 
 
+## Ruby Abstraction: The Spaceship Operator
+
+Now that we have an understanding of how `.sort` works, we can introduce a level of abstraction via the spaceship operator, or the `<=>`. The spaceship operator, also called the **combined comparison operator**, returns 0 if the first operand equals the second, 1 if first operand is greater than the second and -1 if the first operand is less than the second. So, instead of utilizing `if/eslif` logic as above, we can simply call `.sort` with the following code: 
+
+```ruby
+array = [7, 3, 1, 2, 6, 5]
+
+array.sort do |a, b|
+  a <=> b
+end
+
+#  => [1, 2, 3, 5, 7] 
+```
+
 ## Sorting our dinner party menu 
 
-Now that we have a better understanding of how the `.sort` method works, let's sort our dinner party menu from the earlier example:
+Now that we understand both how strings are compared and how `.sort` works, we're ready to sort our dinner party menu from the earlier example:
 
 ```ruby
 dishes = ["steak", "apple pie", "vegetable soup"]
@@ -78,7 +104,11 @@ end
   => ["apple pie", "steak", "vegetable soup"]
 ```
 
-We did it! The menu is alphabetized. Now, let's take it a step further. Drop into IRB and copy and paste the following code: 
+We did it! The menu is alphabetized. Now, let's take it a step further. 
+
+## Ruby Abstraction: `.sort`
+
+ Drop into IRB and copy and paste the following code: 
 
 ```ruby
 dishes = ["steak", "apple pie", "vegetable soup"]
