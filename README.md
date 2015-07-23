@@ -19,7 +19,7 @@ dishes = ["steak", "apple pie", "vegetable soup"]
 
 ### Comparing Strings
 
-We need sort the dishes in this array into alphabetical order. We've already learned about comparison operators like `>` and `<` and used them on numbers. These operators work on strings too. If we compare strings using these operators, the comparison operator will look at the first letter of each string and compare their locations in the alphabet. Letters later in the alphabet are considered greater than letters earlier in the aplhabet. For example: 
+We need sort the dishes in this array into alphabetical order. We've already learned about comparison operators like `>` ("greater than") and `<` ("less than") and used them on numbers. These operators work on strings too. If we compare strings using these operators, the comparison operator will look at the first letter of each string and compare their locations in the alphabet. Letters later in the alphabet are considered *greater than* letters earlier in the aplhabet. For example: 
 
 `"zoo" > "apple"`
 
@@ -55,9 +55,13 @@ array.each do |num|
 end
 ```
 
-`.each` starts at the beginning of the array and passes each item, *one at a time*, to the code in the block (code in between `do`, `end`). We see `.each` passing each element of the array to the block here: `|num|`, by placing a placeholder for each element in between these pipes. 
+The `.each` method starts at the beginning of the array and passes each item *one at a time* to the code in the block (the code in between `do`...`end`). We see `.each` passing each element of the array to the block here: `|num|`, by placing a placeholder for each element in between the pipes (`| |`). 
 
-`.sort` is different. It passes elements *two at a time* into the block, and compares those two elements inside the block with our `if/elsif` logic. If `a` and `b` are equal, the block will return 0, and `.sort` will leave them in their current places. If `a` is less than `b` and belongs before it, the block will return `-1` and `.sort` will once again leave them in their current places (because `a` is already before `b`.) If `a` is greater than `b` and belongs after it, the block will return `1` and `.sort` will switch the locations of `a` and `b`.  
+The `.sort` method is different. It passes elements *two at a time* into the block, and compares those two elements inside the block with our `if` & `elsif` logic:
+
+* If `a` and `b` are equal, the block will return `0`, and `.sort` will leave them in their current places.
+* If `a` is less than `b` and belongs before it, the block will return `-1` and `.sort` will once again leave them in their current places (because `a` is already before `b`.) 
+* If `a` is greater than `b` and belongs after it, the block will return `1` and `.sort` will switch the locations of `a` and `b`.  
 
 Therefore, when we call: 
 
@@ -83,7 +87,13 @@ On the second pass through the array, `.sort` yields the next two items to the b
 
 ## Ruby Abstraction: The Spaceship Operator
 
-Now that we have an understanding of how `.sort` works, we can introduce a level of abstraction via the spaceship operator, or the `<=>`. The spaceship operator, also called the **combined comparison operator**, returns 0 if the first operand equals the second, 1 if first operand is greater than the second and -1 if the first operand is less than the second. So, instead of utilizing `if/eslif` logic as above, we can simply call `.sort` with the following code: 
+Now that we have an understanding of how `.sort` works, we can introduce a level of abstraction by using the "spaceship operator" (`<=>`). The spaceship operator, also called the **combined comparison operator**, 
+
+* returns `0` if the first operand equals the second, 
+* returns `1` if first operand is greater than the second, and 
+* returns `-1` if the first operand is less than the second. 
+
+So, instead of utilizing `if` & `eslif` logic like we did above, we can simply call `.sort` with the following code: 
 
 ```ruby
 array = [7, 3, 1, 2, 6, 5]
@@ -97,7 +107,7 @@ end
 
 ## Sorting our dinner party menu 
 
-Now that we understand both how strings are compared and how `.sort` works, we're ready to sort our dinner party menu from the earlier example:
+Now that we understand how strings are compared and how `.sort` works, we're ready to sort our dinner party menu from the earlier example:
 
 ```ruby
 dishes = ["steak", "apple pie", "vegetable soup"]
@@ -109,11 +119,11 @@ end
   => ["apple pie", "steak", "vegetable soup"]
 ```
 
-We did it! The menu is alphabetized. Now, let's take it a step further. 
+We did it—the menu is alphabetized! Now, let's take it a step further. 
 
 ## Ruby Abstraction: `.sort`
 
- Drop into IRB and copy and paste the following code: 
+ Drop into IRB and enter the following code: 
 
 ```ruby
 dishes = ["steak", "apple pie", "vegetable soup"]
@@ -125,7 +135,7 @@ It should return : `["apple pie", "steak", "vegetable soup"]`.
 
 Simply calling `.sort` has the desired effect. It implicity executes the code we used in the block in the above example. But now we understand *how* sort works, not just *what* it does. 
 
-**Bonus:** Think about customizing a sorting method. Since `.sort` takes a block, can we tell `.sort` to sort in reverse alphabetical order? In other words, can we sort a collection of data from greatest to least? 
+**Advanced:** *Think about customizing a sorting method. Since* `.sort` *takes a block, can we tell* `.sort` *to sort in reverse alphabetical order? In other words, can we sort a collection of data from greatest to least?*
 
 ## Resources
 
