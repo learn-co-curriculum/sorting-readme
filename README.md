@@ -5,7 +5,7 @@
 1. Introduce the usefullness of sorting data.
 2. Introduce how the basic Ruby `sort` method works under the hood.
 
-Sorting collections of data is a very common task in programming. As a developer, you can imagine being confronted with the need to sort items by price, or emails by their position in the alphabet, for example. There are a number of ways to execute sorting in Ruby. Here's we'll discuss one basic example and learn how to sort a list of words. 
+Sorting collections of data is a very common task in programming. As a developer, you can imagine being confronted with the need to sort items by price, or emails by their position in the alphabet, for example. There are a number of ways to execute sorting in Ruby. Here we'll discuss one basic example and learn how to sort a list of words. 
 
 ## Dinner Party Example
 
