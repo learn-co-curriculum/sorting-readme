@@ -19,7 +19,7 @@ dishes = ["steak", "apple pie", "vegetable soup"]
 
 ### Comparing Strings
 
-We need sort the dishes in this array into alphabetical order. We've already learned about comparison operators like `>` ("greater than") and `<` ("less than") and used them on numbers. These operators work on strings too. If we compare strings using these operators, the comparison operator will look at the first letter of each string and compare their locations in the alphabet. Letters later in the alphabet are considered *greater than* letters earlier in the aplhabet. For example: 
+We need to sort the dishes in this array into alphabetical order. We've already learned about comparison operators like `>` ("greater than") and `<` ("less than") and used them on numbers. These operators work on strings too. If we compare strings using these operators, the comparison operator will look at the first letter of each string and compare their locations in the alphabet. Letters later in the alphabet are considered *greater than* letters earlier in the aplhabet. For example: 
 
 `"zoo" > "apple"`
 
