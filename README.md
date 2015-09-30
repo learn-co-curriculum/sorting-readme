@@ -102,7 +102,7 @@ array.sort do |a, b|
   a <=> b
 end
 
-#  => [1, 2, 3, 5, 7] 
+#  => [1, 2, 3, 5, 6, 7] 
 ```
 
 ## Sorting our dinner party menu 
