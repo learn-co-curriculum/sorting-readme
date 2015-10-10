@@ -37,7 +37,7 @@ Let's take a look at a basic example using an array of numbers:
 array = [7, 3, 1, 2, 6, 5]
 
 array.sort do |a, b|
-	if a == b
+  if a == b
     0
   elsif a > b
     1
@@ -69,7 +69,7 @@ Therefore, when we call:
 array = [7, 3, 1, 2, 6, 5]
 
 array.sort do |a, b|
-	if a == b
+  if a == b
     0
   elsif a > b
     1
@@ -93,7 +93,7 @@ Now that we have an understanding of how `.sort` works, we can introduce a level
 * returns `1` if first operand is greater than the second, and 
 * returns `-1` if the first operand is less than the second. 
 
-So, instead of utilizing `if` & `eslif` logic like we did above, we can simply call `.sort` with the following code: 
+So, instead of utilizing `if` & `elsif` logic like we did above, we can simply call `.sort` with the following code: 
 
 ```ruby
 array = [7, 3, 1, 2, 6, 5]
