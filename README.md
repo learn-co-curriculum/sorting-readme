@@ -118,7 +118,7 @@ dishes.sort do |a, b|
 	a <=> b
 end
 
-  => ["apple pie", "steak", "vegetable soup"]
+ # => ["apple pie", "steak", "vegetable soup"]
 ```
 
 We did it—the menu is alphabetized! Now, let's take it a step further.
