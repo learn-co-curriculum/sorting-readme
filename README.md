@@ -1,6 +1,6 @@
 # Sorting
 
-## Ojbectives
+## Objectives
 
 1. Introduce the usefulness of sorting data.
 2. Introduce how the basic Ruby `sort` method works under the hood.
