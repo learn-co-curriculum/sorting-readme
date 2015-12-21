@@ -31,7 +31,7 @@ Will return
 
 In order to sort our list of dishes, we will have to iterate over the array and compare every set of items. So far, when we've iterated with methods like `.each` or `.collect`, we iterate over *one element of the collection* at a time. Now, in order to compare the elements in our array to one another, we need an enumerator that allows us to yield two elements at once. That's where the `.sort` method comes in.
 
-The sort method yields to a block with two elements. That block is the comparator, so it should compare the two elements and return 0 if they are the same, -1 if the first is less then the second, and 1 if the first is greater then the second
+The sort method yields to a block with two elements. That block is the comparator, so it should compare the two elements and return 0 if they are the same, -1 if the first is less then the second, and 1 if the first is greater than the second
 
 Let's take a look at a basic example using an array of numbers:
 
