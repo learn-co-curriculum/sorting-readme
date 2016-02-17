@@ -73,10 +73,10 @@ array = [7, 3, 1, 2, 6, 5]
 array.sort do |a, b|
   if a == b
     0
-  elsif a > b
-    1
   elsif a < b
     -1
+  elsif a > b
+    1
   end
 end
 ```
@@ -92,8 +92,8 @@ On the second pass through the array, `.sort` yields the next two items to the b
 Now that we have an understanding of how `.sort` works, we can introduce a level of abstraction by using the "spaceship operator" (`<=>`). The spaceship operator, also called the **combined comparison operator**,
 
 * returns `0` if the first operand equals the second,
-* returns `1` if first operand is greater than the second, and
-* returns `-1` if the first operand is less than the second.
+* returns `-1` if the first operand is less than the second, and
+* returns `1` if the first operand is greater than the second.
 
 So, instead of utilizing `if` & `elsif` logic like we did above, we can simply call `.sort` with the following code:
 
