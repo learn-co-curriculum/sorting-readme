@@ -148,6 +148,6 @@ Simply calling `.sort` has the desired effect. It implicity executes the code we
 * [Watch sorting happen](https://www.youtube.com/watch?v=kPRA0W1kECg)
 * [Compare different sorting algorithms](http://www.sorting-algorithms.com/)
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sorting-readme' title='Sorting'>Sorting</a> on Learn.co and start learning to code for free.</p>
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/sorting-readme'>Sorting </a> on Learn.co and start learning to code for free.</p>
+
+
